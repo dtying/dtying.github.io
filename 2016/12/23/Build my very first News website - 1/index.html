@@ -7,7 +7,7 @@
     
 
     <title>
-      Preface | DING.TY 
+      Build my very first News website - 1 | DING.TY 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,16 +16,16 @@
     
     
 
-    <meta name="description" content="第一次尝试着用hexo搭建了这个blog。以此作为契机，来记录自己的工作，学习与生活的点滴。">
+    <meta name="description" content="StateIn Redux, everything is about state. State shape is the first thing you should think about.It’s a good idea to think of its shape before writing any code. What’s the minimal representation of you">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Preface | DING.TY">
-<meta property="og:url" content="http://dtying.github.io/2016/12/03/Preface/index.html">
+<meta property="og:title" content="Build my very first News website - 1 | DING.TY">
+<meta property="og:url" content="http://dtying.github.io/2016/12/23/Build my very first News website - 1/index.html">
 <meta property="og:site_name" content="DING.TY">
-<meta property="og:description" content="第一次尝试着用hexo搭建了这个blog。以此作为契机，来记录自己的工作，学习与生活的点滴。">
-<meta property="og:updated_time" content="2016-12-03T10:38:25.821Z">
+<meta property="og:description" content="StateIn Redux, everything is about state. State shape is the first thing you should think about.It’s a good idea to think of its shape before writing any code. What’s the minimal representation of you">
+<meta property="og:updated_time" content="2016-12-23T10:01:05.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Preface | DING.TY">
-<meta name="twitter:description" content="第一次尝试着用hexo搭建了这个blog。以此作为契机，来记录自己的工作，学习与生活的点滴。">
+<meta name="twitter:title" content="Build my very first News website - 1 | DING.TY">
+<meta name="twitter:description" content="StateIn Redux, everything is about state. State shape is the first thing you should think about.It’s a good idea to think of its shape before writing any code. What’s the minimal representation of you">
     
     
     
@@ -188,12 +188,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">Preface</h1>
+    <h1 class="post-title">Build my very first News website - 1</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2016-12-03" class="post-meta__date date">2016-12-03</time> 
+      <time datetime="2016-12-23" class="post-meta__date date">2016-12-23</time> 
 
       <span class="post-meta__tags tags">
 
@@ -202,7 +202,7 @@ classes that you can use:
           
              &#8226; tags:
             <font class="tags">
-              <a class="tags-link" href="/tags/life/">life</a>
+              <a class="tags-link" href="/tags/React-Redux/">React, Redux</a>
             </font>
           
 
@@ -214,7 +214,14 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>第一次尝试着用hexo搭建了这个blog。以此作为契机，来记录自己的工作，学习与生活的点滴。</p>
+    <h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><p>In Redux, everything is about state. State shape is the first thing you should think about.<br><blockquote><p>It’s a good idea to think of its shape before writing any code. What’s the minimal representation of your app’s state as an object?</p>
+</blockquote></p>
+<p>I had normalized the state shape to ensure data consistency. If you’re not sure what normalize is, you can check Dan’s video. To put it simply, it means the data is stored in a look-up table style, and referred to by its id.<br>Below is how my state object looks like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  byId: &#123;id0: &#123;&#125;, id1:&#123;&#125;, id2:&#123;&#125;...&#125;</div><div class="line">  listByFilter: &#123;ids:[array], isFetching&#125;</div><div class="line">  opts: &#123;page&#125;</div><div class="line">  details: &#123;ids:[array], isFetching&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><p>State object forms the structure of the root reducer.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const newsApp = combineReducers(&#123;</div><div class="line">  byId,</div><div class="line">  listByFilter: createList(),</div><div class="line">  opts,</div><div class="line">  details: createDetails()</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>As state and reducer lay the foundation of the web application logic, it’s where you should start thinking first.<br>One thing to note, it’s better to flatten the state object, rather than nest it. When you need to add new property in state object, try to compose it with multiple reducers, instead of adding property deep inside it. In this way, your reducer will be easy to test and read.</p>
+<h2 id="What’s-next"><a href="#What’s-next" class="headerlink" title="What’s next"></a>What’s next</h2><p>Since Reducer is mentioned here, in the next post, I’ll discuss about how to test Reducer. It’s an important step to make sure your app can function correctly.</p>
 
   </section>
 

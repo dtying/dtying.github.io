@@ -53,7 +53,10 @@ body {
 @font-face {
   font-family: "foundation-icons";
   src: url("../fonts/foundation-icons/foundation-icons.eot");
-  src: url("../fonts/foundation-icons/foundation-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/foundation-icons/foundation-icons.woff") format("woff"), url("../fonts/foundation-icons/foundation-icons.ttf") format("truetype"), url("../fonts/foundation-icons/foundation-icons.svg#fontcustom") format("svg");
+  src: url("../fonts/foundation-icons/foundation-icons.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/foundation-icons/foundation-icons.woff") format("woff"),
+  url("../fonts/foundation-icons/foundation-icons.ttf") format("truetype"),
+  url("../fonts/foundation-icons/foundation-icons.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal; }
 .icon:before {
@@ -950,7 +953,7 @@ h2,
 h3,
 h4,
 h5,
-h5 {
+h6 {
   margin-top: .8em;
   margin-bottom: .4em;
   /*font-family: "Roboto Slab", serif;*/
@@ -1034,7 +1037,7 @@ code {
 .time,
 .author,
 .tags {
-  font-size: .8em;
+  font-size: .9em;
   color: #c7c7c7; }
   .date a,
   .time a,
